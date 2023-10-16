@@ -1,14 +1,11 @@
 import {Trash2} from "lucide-react";
 import styles from "./ListTasks.module.css";
 
-function ListTask({task, onDelete, onCheckedChange, done, numberOfTasks }){
+function ListTask({task, onDelete, onCheckedChange }){
     function handleChange(event){
         onCheckedChange(task.id,event.target.checked);
     }
 
-    async function handleToDoTasks(){
-        
-    }
 
     return(
         <li className={styles.task}>

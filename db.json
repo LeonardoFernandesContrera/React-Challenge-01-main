@@ -2,13 +2,8 @@
   "tasks": [
     {
       "text": "Terminar o desafio",
-      "done": true,
-      "id": 1
-    },
-    {
-      "text": "teste de finalização",
       "done": false,
-      "id": 2
+      "id": 1
     }
   ]
 }

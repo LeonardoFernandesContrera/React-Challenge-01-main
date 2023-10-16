@@ -13,8 +13,13 @@ const BASE_URL = "http://localhost:3333/tasks";
  */
 function App() {
   const [tasks, setTasks] = useState([]);
-  const doneTasks = tasks.filter((task) => task.done).length; // TODO: Filter the tasks that are done if needed
   const [isLoading, setIsLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
+  console.log(123);
+
+  const filteredTasks = isChecked ? tasks.filter((task) => !task.done) : tasks 
+
 
   //Hook
 
@@ -74,14 +79,6 @@ function App() {
     setTasks(newTasks);
   }
 
-  async function handleToDoTasks(){
-    const res = await fetch(BASE_URL,{
-      method:"GET",
-    });
-    const toDoTasks = tasks.filter((task) => task.done !== situation);
-    setTasks(toDoTasks);
-  }
-
   return (
     <div>
       <main>
@@ -89,19 +86,17 @@ function App() {
 
       <div>
         <p>Filtrar tarefas concluídas</p>
-        <input type="checkbox" onChange={handleToDoTasks} ></input>
+        <input type="checkbox" onChange={() => setIsChecked(!isChecked)} ></input>
       </div>
 
       <ul className={styles.taskList}>
         {tasks.length > 0 ? (
-          tasks.map((task) =>(
+          filteredTasks.map((task) =>(
             <ListTask
               key={task.id}
               task={task}
               onDelete={handleDelete}
               onCheckedChange={handleCheckChange}
-              done={doneTasks}
-              numberOfTasks={tasks.length}
             />
           ))
         ) : isLoading ? (
