@@ -1,16 +1,24 @@
-import {List, Trash, Trash2,} from "lucide-react";
+import {Trash2} from "lucide-react";
 import styles from "./ListTasks.module.css";
 
-function ListTask({task, onDelete, onCheckedChange }){
+function ListTask({task, onDelete, onCheckedChange, done, numberOfTasks }){
     function handleChange(event){
         onCheckedChange(task.id,event.target.checked);
     }
 
+    async function handleToDoTasks(){
+        
+    }
+
     return(
-        <li className={styles.tasks}>
+        <li className={styles.task}>
             <input type="checkbox" checked={task.done} onChange={handleChange}/>
 
-            <button onClick={() => onDelete(item.id)}>
+            <div>
+                <p>{task.text}</p>
+            </div>
+
+            <button onClick={() => onDelete(task.id)}>
                 <Trash2 size={16}></Trash2>
             </button>
         </li>
