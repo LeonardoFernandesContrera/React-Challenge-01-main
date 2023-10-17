@@ -1,5 +1,51 @@
 /** TODO: Write the styles for the App component */
+.taskList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 0.5rem;
+}
 
-h1{
-    font-size: 32px;
+
+.main{
+    max-width: 37.5rem;
+    margin: 0 auto;
+}
+
+.filtrar{
+    margin-top: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.filtrar > input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--gray-100);
+    margin-right: 0.5rem;
+    appearance: none;
+    border: 1px solid var(--blue-600);
+    border-radius: 0.50rem;
+    color: var(--gray-100);
+    font-size: 0.7rem;
+    line-height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtrar > input[type="checkbox"]:checked{
+    background-color: var(--blue-500);
+    color: var(--gray-100);
+}
+
+.filtrar > input[type="checkbox"]:checked::before {
+    content: "✔";
+}
+
+.filtrar > input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 1px var(--blue-500);
+    outline: 2px solid var(--blue-500);
 }

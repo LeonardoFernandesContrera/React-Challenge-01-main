@@ -9,13 +9,11 @@ function ListTask({task, onDelete, onCheckedChange }){
 
     return(
         <li className={styles.task}>
-            <input type="checkbox" checked={task.done} onChange={handleChange}/>
-
-            <div>
-                <p>{task.text}</p>
+            <div className={styles.div}>
+                <input type="checkbox" id="done" checked={task.done} onChange={handleChange}/>
+                <label htmlFor="done">{task.text}</label>
             </div>
-
-            <button onClick={() => onDelete(task.id)}>
+            <button className={styles.trash} onClick={() => onDelete(task.id)}>
                 <Trash2 size={16}></Trash2>
             </button>
         </li>

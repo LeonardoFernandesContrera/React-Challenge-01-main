@@ -46,4 +46,8 @@ body {
 
 input[type="checkbox"] {
   /** TODO: Change the default checkbox input */
+  border-radius: 9999px;
+  padding: 0.125rem;
+  color: var(--blue-700);
+  background-color: var(--blue-700);
 }

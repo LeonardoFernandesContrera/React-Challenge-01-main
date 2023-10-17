@@ -81,15 +81,15 @@ function App() {
 
   return (
     <div>
-      <main>
+      <main className={styles.main}>
         <TaskForm onSubmit={handleSubmit} />
+        
+    <div className={styles.filtrar}>
+      <input id="filter" type="checkbox" onChange={() => setIsChecked(!isChecked)} />
+      <label htmlFor="filter" >Filtrar tarefas concluídas</label>
+    </div>
 
-      <div>
-        <p>Filtrar tarefas concluídas</p>
-        <input type="checkbox" onChange={() => setIsChecked(!isChecked)} ></input>
-      </div>
-
-      <ul className={styles.taskList}>
+      <ul>
         {tasks.length > 0 ? (
           filteredTasks.map((task) =>(
             <ListTask
@@ -102,7 +102,7 @@ function App() {
         ) : isLoading ? (
           <p></p>
         ) : (
-          <p>Não há nenhuma tarefa na lista</p>
+          <p className={styles.taskList}>Não há nenhuma tarefa na lista</p>
         )}
       </ul>
       </main>

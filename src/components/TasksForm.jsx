@@ -16,11 +16,12 @@ function TasksForm({onSubmit}){
 
     return( 
         <form 
-            className={styles.TasksForm} 
+            className={styles.Header} 
             onSubmit={(event) => handleSubmit(event)} >
                 <h1 className={styles.label}>Minhas Tarefas</h1>
-            <div className={styles.div}> 
+            <div className={styles.taskForm}> 
             <input
+                placeholder="Passear com o cachorro"
                 className={styles.input}
                 type="text"
                 id="text"
