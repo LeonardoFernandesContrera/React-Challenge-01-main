@@ -10,8 +10,8 @@ function ListTask({task, onDelete, onCheckedChange }){
     return(
         <li className={styles.task}>
             <div className={styles.div}>
-                <input type="checkbox" id="done" checked={task.done} onChange={handleChange}/>
-                <label htmlFor="done">{task.text}</label>
+                <input type="checkbox" id={task.id} checked={task.done} onChange={handleChange}/>
+                <label htmlFor={task.id} >{task.text}</label>
             </div>
             <button className={styles.trash} onClick={() => onDelete(task.id)}>
                 <Trash2 size={16}></Trash2>

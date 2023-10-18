@@ -8,10 +8,12 @@ function TasksForm({onSubmit}){
     async function handleSubmit(event){
         event.preventDefault();
         
-        await onSubmit(text);
+        const verification = text.trim()
+
+        verification.length > 0 ? await onSubmit(text) : alert("Não é possivel passar uma tarefa vazia")
 
         setText("");
-        inputRef.current?.focus();
+        document.getElementById("text").focus();
     }
 
     return( 

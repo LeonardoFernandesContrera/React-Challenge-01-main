@@ -46,8 +46,15 @@ body {
 
 input[type="checkbox"] {
   /** TODO: Change the default checkbox input */
-  border-radius: 9999px;
-  padding: 0.125rem;
-  color: var(--blue-700);
-  background-color: var(--blue-700);
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
+  appearance: none;
+  border: 1px solid var(--blue-600);
+  border-radius: 0.50rem;
+  font-size: 0.5rem;
+  line-height: 1rem;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
 }

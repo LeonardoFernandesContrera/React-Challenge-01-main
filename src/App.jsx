@@ -1,4 +1,3 @@
-import { BaselineIcon } from "lucide-react";
 import styles from "./App.module.css";
 import ListTask from "./components/ListTasks.jsx";
 import TaskForm from "./components/TasksForm.jsx";
@@ -13,13 +12,11 @@ const BASE_URL = "http://localhost:3333/tasks";
  */
 function App() {
   const [tasks, setTasks] = useState([]);
+  // const [doneTasks, setDoneTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
-  console.log(123);
-
-  const filteredTasks = isChecked ? tasks.filter((task) => !task.done) : tasks 
-
+  const filteredTasks = isChecked ? tasks.filter((task) => !task.done) : tasks
 
   //Hook
 
@@ -86,7 +83,7 @@ function App() {
         
     <div className={styles.filtrar}>
       <input id="filter" type="checkbox" onChange={() => setIsChecked(!isChecked)} />
-      <label htmlFor="filter" >Filtrar tarefas concluídas</label>
+      <label htmlFor="filter" >Filtrar tarefas concluídas {tasks.filter((task) => task.done).length} de {tasks.length} </label>
     </div>
 
       <ul>
