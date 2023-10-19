@@ -2,18 +2,13 @@
   "tasks": [
     {
       "text": "teste",
-      "done": true,
+      "done": false,
       "id": 1
     },
     {
       "text": "sdfsssds",
       "done": false,
       "id": 8
-    },
-    {
-      "text": "dsaddadadadsdad",
-      "done": false,
-      "id": 9
     }
   ]
 }
